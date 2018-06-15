@@ -59,9 +59,9 @@
     </table>
 </div>
 </body>
-<script src="plugins/pdfview/static/jquery.slim.min.js"></script>
-<script src="plugins/pdfview/static/popper.min.js"></script>
-<script src="plugins/pdfview/static/bootstrap.min.js"></script>
-<script src="plugins/pdfview/static/jquery-3.2.1.min.js"></script>
-<script src="plugins/pdfview/static/index.js"></script>
+<script src="pdfview/static/jquery.slim.min.js"></script>
+<script src="pdfview/static/popper.min.js"></script>
+<script src="pdfview/static/bootstrap.min.js"></script>
+<script src="pdfview/static/jquery-3.2.1.min.js"></script>
+<script src="pdfview/static/index.js"></script>
 </html>

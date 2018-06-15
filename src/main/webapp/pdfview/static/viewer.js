@@ -2239,7 +2239,7 @@
         function webViewerPageChanging(evt) {
             var page = evt.pageNumber;
             //保存历史记录
-            saveHistoryData(page, function () {
+            saveHistoryData(page, pdfid, function () {
                 PDFViewerApplication.toolbar.setPageNumber(page, evt.pageLabel || null);
                 PDFViewerApplication.secondaryToolbar.setPageNumber(page);
                 if (PDFViewerApplication.pdfSidebar.isThumbnailViewVisible) {
@@ -10187,17 +10187,10 @@
         function webViewerLoad() {
             var config = getViewerConfiguration();
             //获取数据
-            $(function(){
-                $.get("/getGlobalData",function(result){
-                    //result数据添加到box容器中;
-                    result = JSON.parse(result);
-                    var url = 'upload/'+ result.id +'.pdf';
-                    config.defaultUrl = url;
-                    config.historyNum = result.currentPage;
-                    window.PDFViewerApplication = pdfjsWebApp.PDFViewerApplication;
-                    pdfjsWebApp.PDFViewerApplication.run(config);
-                });
-            });
+            config.defaultUrl = pdfurl;
+            config.historyNum = parseInt(currentPage);
+            window.PDFViewerApplication = pdfjsWebApp.PDFViewerApplication;
+            pdfjsWebApp.PDFViewerApplication.run(config);
         }
         if (document.readyState === 'interactive' || document.readyState === 'complete') {
             webViewerLoad();

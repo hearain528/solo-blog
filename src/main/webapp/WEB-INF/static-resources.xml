@@ -100,5 +100,7 @@
 
     <include path="/CHANGE_LOGS.html"/>
     <include path="/LICENSE.txt"/>
+    <include path="/pdfview/**" />
+	<include path="/pdfjs/**" />
 
 </static-files>

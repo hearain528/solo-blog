@@ -35,10 +35,15 @@ See https://github.com/adobe-type-tools/cmap-resources
 
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="pdfjs/web/locale/locale.properties">
+      <script>
+          var pdfurl = "${url}";
+          var currentPage = "${currentPage}";
+          var pdfid = "${id}";
+      </script>
 <script src="pdfjs/build/pdf.js"></script>
-    <script src="jquery-3.2.1.min.js"></script>
-    <script src="core/data.js"></script>
-    <script src="viewer.js"></script>
+    <script src="pdfview/static/jquery-3.2.1.min.js"></script>
+    <script src="pdfview/static/core/data.js"></script>
+    <script src="pdfview/static/viewer.js"></script>
 
   </head>
 

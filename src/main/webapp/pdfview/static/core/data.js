@@ -1,10 +1,10 @@
 //保存历史数据
-function saveHistoryData(currentPageNumber, callback) {
+function saveHistoryData(currentPageNumber, id,  callback) {
     $(function(){
         $.ajax({
-            url:'/saveHistoryData',
+            url:'/saveHistoryData.do',
             method:'post',
-            data:{"data" : parseInt(currentPageNumber)},
+            data:{"data" : parseInt(currentPageNumber), "id": id},
             async: false,
             success:function(data){
                 console.log('成功');

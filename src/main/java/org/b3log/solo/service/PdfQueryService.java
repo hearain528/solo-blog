@@ -1,5 +1,6 @@
 package org.b3log.solo.service;
 
+import com.google.gson.JsonObject;
 import org.b3log.latke.Keys;
 import org.b3log.latke.ioc.inject.Inject;
 import org.b3log.latke.repository.Query;
@@ -37,6 +38,18 @@ public class PdfQueryService {
     }
 
     /**
+     * 根据id获取pdf信息
+     * @author qijun
+     * @date 2018/6/15 0015 14:43
+     * @param
+     * @return
+     * @throws
+     */
+    public JSONObject getPdfInfo(String id) throws Exception{
+    	return pdfRepository.get(id);
+    }
+
+    /**
      * 添加pdf数据
      * @author qijun
      * @date 2018/6/14 0014 11:18
@@ -49,5 +62,35 @@ public class PdfQueryService {
         final Transaction transaction = pdfRepository.beginTransaction();
         pdfRepository.add(pdfinfo);
         transaction.commit();
+    }
+
+    /**
+     * 删除pdf文件
+     * @author qijun
+     * @date 2018/6/15 0015 14:32
+     * @param
+     * @return
+     * @throws
+     */
+    public void deletePdf(String id) throws Exception{
+	    final Transaction transaction = pdfRepository.beginTransaction();
+	    pdfRepository.remove(id);
+	    transaction.commit();
+    }
+    
+    /**
+     *
+     * @author qijun
+     * @date 2018/6/15 0015 16:05 
+     * @param 
+     * @return 
+     * @throws 
+     */
+    public void updatePdfInfo(String id, Integer readPage) throws Exception{
+	    final Transaction transaction = pdfRepository.beginTransaction();
+	    JSONObject jsonObject = pdfRepository.get(id);
+	    jsonObject.put("currentPage", readPage);
+		pdfRepository.update(id, jsonObject);
+	    transaction.commit();
     }
 }
