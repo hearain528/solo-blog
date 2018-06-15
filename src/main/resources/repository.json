@@ -593,6 +593,39 @@
                     "legnth": 20
                 }
             ]
+        },
+        {
+            "name":"pdf",
+            "description":"pdf表",
+            "keys": [
+                {
+                    "name": "oId",
+                    "description": "主键",
+                    "type": "int"
+                },
+                {
+                    "name": "realname",
+                    "description": "pdf的文件名称",
+                    "type": "String",
+                    "length": 255
+                },
+                {
+                    "name": "idname",
+                    "description": "文件的md5",
+                    "type": "String",
+                    "legnth": 50
+                },
+                {
+                    "name": "size",
+                    "description": "文件大小",
+                    "type": "int"
+                },
+                {
+                    "name": "currentPage",
+                    "description": "阅读记录",
+                    "type": "int"
+                }
+            ]
         }
     ]
 }
